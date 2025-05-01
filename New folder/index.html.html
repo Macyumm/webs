@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Start Earning Robux Now</title>
+<script src="https://cdn.tailwindcss.com/3.4.16"></script>
+<script>tailwind.config={theme:{extend:{colors:{primary:'#FF0000',secondary:'#1F1F1F'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+<style>
+:where([class^="ri-"])::before { content: "\f3c2"; }
+body {
+font-family: 'Roboto', sans-serif;
+min-height: 100vh;
+overflow-x: hidden;
+}
+.gradient-bg {
+position: fixed;
+inset: 0;
+background: linear-gradient(45deg, #000000, #1a0000);
+}
+.floating-particles {
+position: absolute;
+inset: 0;
+overflow: hidden;
+}
+.particle {
+position: absolute;
+background: radial-gradient(circle, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0) 70%);
+border-radius: 50%;
+animation: float 20s infinite;
+}
+@keyframes float {
+0%, 100% {
+transform: translate(0, 0);
+}
+25% {
+transform: translate(100px, 100px);
+}
+50% {
+transform: translate(0, 200px);
+}
+75% {
+transform: translate(-100px, 100px);
+}
+}
+.hero-container {
+position: relative;
+background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://readdy.ai/api/search-image?query=professional%20Roblox%20game%20environment%20with%203D%20blocks%20and%20characters%20in%20a%20digital%20world%2C%20modern%20gaming%20platform%2C%20high%20quality%20render%2C%20dark%20theme%20with%20subtle%20red%20accents%2C%20abstract%20game%20elements%2C%20professional%20game%20design%2C%20no%20text&width=1920&height=1080&seq=12345&orientation=landscape');
+background-size: cover;
+background-position: center;
+background-repeat: no-repeat;
+}
+.btn-glow {
+box-shadow: 0 0 15px rgba(255, 0, 0, 0.5);
+transition: all 0.3s ease;
+}
+.btn-glow:hover {
+transform: scale(1.05);
+box-shadow: 0 0 25px rgba(255, 0, 0, 0.7);
+}
+.text-shadow {
+text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+@keyframes fadeIn {
+from { opacity: 0; transform: translateY(20px); }
+to { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-in {
+animation: fadeIn 0.8s ease-out forwards;
+}
+.animate-fade-in-delay {
+animation: fadeIn 0.8s ease-out 0.3s forwards;
+opacity: 0;
+}
+</style>
+</head>
+<body class="bg-black">
+<div class="hero-container w-full min-h-screen flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8">
+<div class="text-center max-w-4xl animate-fade-in">
+<h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-white mb-8 text-shadow leading-tight">
+Start Earning <span class="text-primary">Robux</span> Now
+</h1>
+<p class="text-lg sm:text-xl text-gray-200 mb-10 max-w-2xl mx-auto text-shadow">
+Turn your gaming skills into rewards. Join thousands of players already earning Robux through our platform.
+</p>
+<button id="startEarningBtn" class="bg-primary text-white font-bold text-lg sm:text-xl py-4 px-8 !rounded-button btn-glow whitespace-nowrap animate-fade-in-delay">
+Start Earning
+</button>
+<div id="popupOverlay" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
+<div class="bg-white !rounded-xl p-6 max-w-md w-full mx-4 relative animate-fade-in">
+<button id="closePopup" class="absolute right-4 top-4 text-gray-500 hover:text-gray-700">
+<i class="ri-close-line ri-lg"></i>
+</button>
+<div class="mb-6">
+<img src="https://readdy.ai/api/search-image?query=professional%203D%20render%20of%20golden%20Robux%20coin%20with%20metallic%20shine%20and%20reflections%2C%20floating%20in%20space%20with%20subtle%20particle%20effects%2C%20dark%20background%20with%20professional%20lighting%2C%20premium%20quality%20render&width=400&height=200&seq=54321&orientation=landscape" alt="Robux" class="w-full h-[200px] object-cover !rounded-lg mb-4">
+<h2 class="text-2xl font-bold text-gray-800 mb-2">Start Earning Robux</h2>
+<p class="text-gray-600">Enter your Roblox username to begin earning Robux rewards</p>
+</div>
+<form id="usernameForm" class="space-y-4">
+<div>
+<label for="username" class="block text-sm font-medium text-gray-700 mb-1">Roblox Username</label>
+<div class="relative">
+<i class="ri-user-line absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"></i>
+<input type="text" id="username" name="username" required class="w-full pl-10 pr-4 py-2 border border-gray-300 !rounded-button focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary" placeholder="Enter your username">
+</div>
+</div>
+<button type="submit" class="w-full bg-primary text-white font-bold py-3 !rounded-button btn-glow whitespace-nowrap">
+Continue
+</button>
+</form>
+</div>
+</div>
+<p class="text-gray-400 mt-6 text-sm animate-fade-in-delay">
+No credit card required. Start earning today.
+</p>
+</div>
+<div class="absolute bottom-6 flex flex-col items-center animate-fade-in-delay">
+<p class="text-gray-400 text-sm mb-2">Trusted by over 1 million players</p>
+<div class="flex space-x-6">
+<div class="w-8 h-8 flex items-center justify-center text-gray-300">
+<i class="ri-shield-check-line ri-lg"></i>
+</div>
+<div class="w-8 h-8 flex items-center justify-center text-gray-300">
+<i class="ri-verified-badge-line ri-lg"></i>
+</div>
+<div class="w-8 h-8 flex items-center justify-center text-gray-300">
+<i class="ri-lock-line ri-lg"></i>
+</div>
+</div>
+</div>
+</div>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+const startEarningBtn = document.getElementById('startEarningBtn');
+const popupOverlay = document.getElementById('popupOverlay');
+const closePopup = document.getElementById('closePopup');
+const usernameForm = document.getElementById('usernameForm');
+startEarningBtn.addEventListener('click', () => {
+popupOverlay.classList.remove('hidden');
+popupOverlay.classList.add('flex');
+});
+closePopup.addEventListener('click', () => {
+popupOverlay.classList.add('hidden');
+popupOverlay.classList.remove('flex');
+});
+popupOverlay.addEventListener('click', (e) => {
+if (e.target === popupOverlay) {
+popupOverlay.classList.add('hidden');
+popupOverlay.classList.remove('flex');
+}
+});
+usernameForm.addEventListener('submit', (e) => {
+e.preventDefault();
+const username = document.getElementById('username').value;
+if (username.trim()) {
+const successDiv = document.createElement('div');
+successDiv.className = 'text-center';
+successDiv.innerHTML = `
+<i class="ri-checkbox-circle-line text-green-500 ri-3x mb-4"></i>
+<h3 class="text-xl font-bold text-gray-800 mb-2">Successfully Connected!</h3>
+<p class="text-gray-600 mb-4">Welcome ${username}!</p>
+<div class="space-y-4">
+<div class="bg-yellow-50 border-l-4 border-yellow-400 p-4">
+<div class="flex items-center">
+<i class="ri-alert-line text-yellow-400 ri-lg mr-2"></i>
+<p class="text-yellow-700 font-medium">Important!</p>
+</div>
+<div class="text-yellow-700 mt-2 space-y-2">
+<p>To start earning Robux, you must:</p>
+<ul class="list-disc pl-5 space-y-1">
+<li>Watch the entire video without skipping</li>
+<li>Subscribe to the channel</li>
+<li>Like the video</li>
+</ul>
+</div>
+</div>
+<div class="flex items-center justify-center space-x-2 text-gray-600">
+<i class="ri-youtube-line text-red-500 ri-lg"></i>
+<span>Get ready to watch the video!</span>
+</div>
+<button id="continueBtn" class="bg-primary text-white font-bold py-3 px-8 !rounded-button btn-glow whitespace-nowrap w-full">
+Continue to Video
+</button>
+</div>
+`;
+const form = popupOverlay.querySelector('form');
+form.parentNode.replaceChild(successDiv, form);
+document.getElementById('continueBtn').addEventListener('click', () => {
+document.querySelector('.hero-container').style.display = 'none';
+popupOverlay.classList.add('hidden');
+popupOverlay.classList.remove('flex');
+showVideoPage();
+});
+}
+});
+function showVideoPage() {
+const currentUrl = new URL(window.location.href);
+currentUrl.searchParams.set('step', 'video');
+window.location.href = 'https://www.youtube.com/shorts/Azpiy2fns8Y';
+setTimeout(() => {
+showComingSoonPage();
+}, 100);
+}
+function showComingSoonPage() {
+document.body.innerHTML = `
+<div class="gradient-bg">
+<div class="floating-particles"></div>
+<div class="relative z-10 min-h-screen flex flex-col items-center justify-center px-4">
+<div class="text-center animate-fade-in backdrop-blur-sm bg-white/5 p-8 rounded-2xl">
+<h1 class="text-4xl sm:text-5xl font-black text-white mb-6">
+<span class="text-primary">Ads</span> Coming Soon
+</h1>
+<p class="text-xl text-gray-300 mb-4 max-w-lg mx-auto">
+You can start earning Robux very soon!
+</p>
+<div class="mt-8">
+<i class="ri-timer-line ri-3x text-primary animate-pulse"></i>
+</div>
+</div>
+</div>
+</div>
+`;
+function createParticles() {
+const container = document.querySelector('.floating-particles');
+for(let i = 0; i < 20; i++) {
+const particle = document.createElement('div');
+particle.className = 'particle';
+particle.style.width = Math.random() * 200 + 100 + 'px';
+particle.style.height = particle.style.width;
+particle.style.left = Math.random() * 100 + 'vw';
+particle.style.top = Math.random() * 100 + 'vh';
+particle.style.animationDelay = Math.random() * 10 + 's';
+container.appendChild(particle);
+}
+}
+createParticles();
+}
+});
+</script>
+</body>
+</html>
